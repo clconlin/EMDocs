@@ -37,9 +37,9 @@ Microsoft Threat Protection (MTP) is a comprehensive, integrated, and intelligen
 
 - **Microsoft Cloud App Security (CAS)** provides enterprise-grade security for your cloud apps and secures on-premises systems related to those cloud applications. Comprehensive controls offer deeper visibility and enhanced protection against cloud security and compliance issues.
 
-- **Windows Defender Advanced Threat Protection (Windows Defender ATP)** is a unified platform for preventive protection, post-breach detection, and automated response, employing intelligent endpoint protection. The Windows Defender Security Center dashboard provides insight into virus, attack and device health activities and performance.
+- **Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP)** is a unified platform for preventive protection, post-breach detection, and automated response, employing intelligent endpoint protection. The Microsoft Defender Security Center dashboard provides insight into virus, attack and device health activities and performance.
 
-- **Azure Advance Threat Protection (Azure ATP)** is a cloud service that helps protect your enterprise hybrid environments from multiple types of advanced cyber-attacks and insider threats by leveraging multiple data sources and a proprietary network parsing engine to capture network traffic for authentication, authorization and information gathering.
+- **Azure Advanced Threat Protection (Azure ATP)** is a cloud service that helps protect your enterprise hybrid environments from multiple types of advanced cyber-attacks and insider threats by leveraging multiple data sources and a proprietary network parsing engine to capture network traffic for authentication, authorization and information gathering.
 
 - **Azure Security Center (ASC)** provides unified security management and advanced threat protection across hybrid cloud workloads. With Azure Security Center, you can apply custom security policies across all workloads, limit exposure to threats, and immediately detect and respond to attacks.
 
@@ -363,38 +363,38 @@ Microsoft Cloud App Security access policies enable real-time monitoring and con
    - **Block**: Set this action to explicitly block access according to the policy filters you set.
 6. Create an alert for each matching event with the policy's severity, set an alert limit, and select whether you want the alert as an email, a text message, or both.
 
-## Exercise 5: Set up and configure Windows Defender Advanced Threat Protection
+## Exercise 5: Set up and configure Microsoft Defender Advanced Threat Protection
 
 ### Introduction
-Windows Defender Advanced Threat Protection (Windows Defender ATP) is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.
+Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP) is a platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats.
 
-Windows Defender Security Center gives enterprise security operations teams a central point of visibility to seamlessly secure networks. To help you maximize the effectiveness of the security platform, you can configure individual capabilities that surface in Windows Defender Security Center.
+Microsoft Defender Security Center gives enterprise security operations teams a central point of visibility to seamlessly secure networks. To help you maximize the effectiveness of the security platform, you can configure individual capabilities that surface in Microsoft Defender Security Center.
 
 ### Prerequisites
 > [!Important]
 > Set up Microsoft Cloud App Security before you go any further.
 
 The following is required for successful set up:
-- You have Windows Defender ATP subscription in your tenant.
-- Any of the following Microsoft Volume licensing subscription offers includes Windows Defender ATP:
+- You have Microsoft Defender ATP subscription in your tenant.
+- Any of the following Microsoft Volume licensing subscription offers includes Microsoft Defender ATP:
    - Windows 10 Enterprise E5
    - Windows 10 Education E5
    - Microsoft 365 E5 (which includes Windows 10 Enterprise E5)
-- You have at least one client PC running Windows, preferably Windows 10 version 1803 or later to onboard to Windows Defender ATP.
+- You have at least one client PC running Windows, preferably Windows 10 version 1803 or later to onboard to Microsoft Defender ATP.
 
-### Setting Up Windows Defender ATP
+### Setting Up Microsoft Defender ATP
 Perform the following steps on the Windows 10 client PC, [Jump Host 01](https://labondemand.com/LabProfile/EditInstructions/45973).
 
-#### Activate Windows Defender Security Center for the first time
-1. Navigate to the [Windows Defender Security Center portal](https://securitycenter.windows.com). Sign in with your tenant global admin credentials, if necessary.
-2. Since you're accessing Windows Defender Security Center for the first time, you'll be prompted to onboard your organization onto the Windows Defender ATP service. Click **Next** to begin the setup wizard.
-3. On Step 3 of the wizard, select an appropriate data storage location for your tenant, e.g. US. Data collected by Windows Defender ATP service from your organization's end points is stored in a secure storage facility hosted in the Azure data center of your choice.
+#### Activate Microsoft Defender Security Center for the first time
+1. Navigate to the [Microsoft Defender Security Center portal](https://securitycenter.windows.com). Sign in with your tenant global admin credentials, if necessary.
+2. Since you're accessing Microsoft Defender Security Center for the first time, you'll be prompted to onboard your organization onto the Microsoft Defender ATP service. Click **Next** to begin the setup wizard.
+3. On Step 3 of the wizard, select an appropriate data storage location for your tenant, e.g. US. Data collected by Microsoft Defender ATP service from your organization's end points is stored in a secure storage facility hosted in the Azure data center of your choice.
 4. Click **Next**, then set the data retention policy in days (e.g. 180 days). Microsoft will store your data from your organization for up to 180 days.
 5. Click **Next** until you reach **Step 4**.
 
-#### Onboarding your Windows 10 endpoint to Windows Defender ATP
-You're now ready to onboard your first endpoint/PC to Windows Defender ATP. In this exercise, you will onboard the Windows 10 client VM, which also serves as your jump host, to your tenant's Windows Defender ATP service.
-1. Ensure you're on Step 4 of the Windows Defender ATP setup wizard. If you closed the browser or navigated away, return to the page by navigating to https://securitycenter.windows.com.
+#### Onboarding your Windows 10 endpoint to Microsoft Defender ATP
+You're now ready to onboard your first endpoint/PC to Microsoft Defender ATP. In this exercise, you will onboard the Windows 10 client VM, which also serves as your jump host, to your tenant's Microsoft Defender ATP service.
+1. Ensure you're on Step 4 of the Microsoft Defender ATP setup wizard. If you closed the browser or navigated away, return to the page by navigating to https://securitycenter.windows.com.
 2. Set the **Deployment method** drop-down to **Local Script**, then click **Download package**.
 3. Save the file (**WindowsDefenderATPOnboardingPackage.zip**) locally on the computer.
 4. Extract the contents of the downloaded configuration package to a location on the endpoint you want to onboard (for example, the desktop). You should have a file named **WindowsDefenderATPOnboardingScript.cmd**.
@@ -405,7 +405,7 @@ You're now ready to onboard your first endpoint/PC to Windows Defender ATP. In t
    5. At the prompt, press **Y**, and then press **Enter** to confirm.
 
 #### Run a Detection Test on a newly onboarded computer
-Run the following PowerShell script on a newly onboarded computer to verify that it is properly reporting to the Windows Defender ATP service.
+Run the following PowerShell script on a newly onboarded computer to verify that it is properly reporting to the Microsoft Defender ATP service.
 1. Open an elevated command-line prompt on the computer and run the script: 
    1. Go to Start and type **cmd**.
    2. Right-click **Command Prompt** and select **Run as administrator**.
@@ -417,7 +417,7 @@ Run the following PowerShell script on a newly onboarded computer to verify that
 3. When detected, the test will be marked as completed and a new alert will appear in the portal for the onboarded computer in approximately 2-10 minutes.
 
 #### Enabling WD Antivirus Protection and WD Exploit Guard
-Use PowerShell cmdlets to enable Windows Defender features:
+Use PowerShell cmdlets to enable Microsoft Defender features:
 1. Open an elevated command-line prompt on the computer and run the script: 
    1. Go to Start and type **cmd**.
    2. Right-click **Command Prompt** and select **Run as administrator**.
@@ -496,7 +496,7 @@ Azure ATP takes information from multiple data-sources such as logs and events i
 ### Prerequisites
 - Administrative access to the Azure portal
 - Access to on-premises domain controller
-- Completion of Lab Exercise #5 (Set up and configure Windows Defender ATP) if you want to configure Azure ATP integration with Windows Defender ATP.
+- Completion of Lab Exercise #5 (Set up and configure Microsoft Defender ATP) if you want to configure Azure ATP integration with Microsoft Defender ATP.
 
 ### Setting Up Azure Advanced Threat Protection
 An Azure ATP workspace is required to set up Azure ATP for your tenant. Configuring Azure ATP is a multi-phased process requiring configuration for both on-premises components (i.e. domain controller) and cloud components (i.e. Azure ATP workspace).
@@ -542,8 +542,8 @@ Azure ATP Workspace enables you to manage various Azure ATP functionality.
    **Domain**: DC01.contoso.lab (this is the FQDN name of the local AD)
 9. Click **Save**.
 
-### Integrate Azure ATP with Windows Defender ATP
-1. Navigate to the [Windows Defender admin center page](https://securitycenter.windows.com).
+### Integrate Azure ATP with Microsoft Defender ATP
+1. Navigate to the [Microsoft Defender admin center page](https://securitycenter.windows.com).
 2. Click **Settings**, and then click **Advanced features**.
 3. Turn on **Azure ATP integration**, and then click **Save Preferences**.
 4. Return to the [Azure ATP admin page](https://portal.atp.azure.com).
